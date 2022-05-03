@@ -1,0 +1,29 @@
+<?php
+$item = array("Bike"=>100, "Tv"=>200, "Album"=>10,"Book"=>5,"Phone"=>500,"Computer"=>1000);
+
+$exp=0;
+$cheap=100;
+$allprices=0;
+$minus=0;
+
+foreach($item as $x => $x_value) {
+    if($exp<$x_value){
+		$exp=$x_value;		
+	}
+	if($cheap>$x_value){
+		$cheap=$x_value;
+	}
+$allprices=$allprices+$x_value;
+    if($x_value<10){
+    	$minus=$minus+$x_value;
+    }
+
+}
+$x=$allprices-$minus;
+
+echo "The expensive item is ".$exp ." $ <br>";
+echo "The cheapest item is ".$cheap ." $ <br>";
+echo "Prices for all the items is ".$allprices ." $ <br>";
+echo "All prices minus items below 10$ is ".$x." $ <br>";
+
+?>
